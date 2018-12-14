@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-É necessario fazer o donwload do vendor, e para isso é preciso intalar o composer, gerenciador de pacotes
+É necessario fazer o donwload do vendor, e para isso é preciso instalar o composer, gerenciador de pacotes
 
 ## Official Documentation
 
