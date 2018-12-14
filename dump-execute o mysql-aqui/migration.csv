@@ -1,0 +1,5 @@
+"migration";"batch"
+"2014_10_12_000000_create_users_table";1
+"2014_10_12_100000_create_password_resets_table";1
+"2018_10_28_220110_create_produtos_table";2
+"2018_11_04_170120_create_produtos_novo";3
