@@ -40,8 +40,8 @@
 					</ul>
 					
 						<ul class="nav navbar-nav ">
-							<li><a href="{{action('ProdutoController@lista')}}" class="navbar-brand" >Listagem</a></li>
-							<li><a href="{{action('ProdutoController@novo')}}" class="navbar-brand" >Novo</a></li>
+							<li><a href="{{action('ProdutoController@lista')}}" class="navbar-brand" >Listar Produtos</a></li>
+							<li><a href="{{action('ProdutoController@novo')}}" class="navbar-brand" >Cadastrar Produto</a></li>
 						</ul>
 				@endif
 				<ul class="nav navbar-nav navbar-right">

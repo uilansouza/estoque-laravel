@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Home</div>
                 <div class="panel-body">
-                       Ola <strong>{{Auth::user()->name}}</strong> tudo bem? Você esta logado!
+                       Ola <strong>{{Auth::user()->name}}</strong> tudo bem? Você esta logado(a)!
                 </div>
             </div>
         </div>
