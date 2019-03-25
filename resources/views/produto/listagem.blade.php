@@ -1,6 +1,8 @@
-@extends('layout.app');
 
-@section('content')   
+
+@extends('layout.app')
+
+@section('content')
 
     <h1>Listagem de produtos</h1>
     @if(empty($produtos))

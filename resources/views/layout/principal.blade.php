@@ -19,7 +19,7 @@
     <div class="container">
          @yield('conteudo')
          <footer class="footer">
-            <p>© Livro de Laravel da Casa do Código.</p>
+            <p>© Sistema de Produtos e venda.</p>
         </footer>
     </div>
     </body>

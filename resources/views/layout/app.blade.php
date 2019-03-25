@@ -42,6 +42,8 @@
 						<ul class="nav navbar-nav ">
 							<li><a href="{{action('ProdutoController@lista')}}" class="navbar-brand" >Listar Produtos</a></li>
 							<li><a href="{{action('ProdutoController@novo')}}" class="navbar-brand" >Cadastrar Produto</a></li>
+							<li><a href="{{action('ClienteController@novo')}}" class="navbar-brand" >Cadastrar Cliente</a></li>
+							<li><a href="{{action('ClienteController@lista')}}" class="navbar-brand" >Listar Cliente</a></li>
 						</ul>
 				@endif
 				<ul class="nav navbar-nav navbar-right">
@@ -65,7 +67,7 @@
 	<div class="container">
          @yield('content')
          <footer class="footer">
-            <p>© Livro de Laravel da Casa do Código.</p>
+            <p>© Sistema de Produto e Vendas.</p>
         </footer>
     </div>>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

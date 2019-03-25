@@ -22,11 +22,23 @@ Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-
 
 Route::get('/produtos/novo', 'ProdutoController@novo');
 Route::post('/produtos/adiciona','ProdutoController@adiciona');
-Route::get('/produtos/json','ProdutoController@listaJason');
+
 
 Route::get('/produtos/remove/{id}','ProdutoController@remove');
 Route::get('/produtos/edita/{id}','ProdutoController@edita');
 Route::post('/produtos/atualizar/{id}','ProdutoController@atualizar');
+
+
+/**
+ * Rotas para Clientes
+ */
+
+Route::get('/clientes','ClienteController@lista');
+Route::get('/clientes/novo','ClienteController@novo');
+Route::post('/clientes/adiciona','ClienteController@adiciona');
+Route::get('/clientes/edita/{id}','ClienteController@edita');
+Route::post('/clientes/atualizar/{id}','ClienteController@atualizar');
+Route::get('/clientes/remove/{id}','ClienteController@remove');
 
 
 # Authentication
