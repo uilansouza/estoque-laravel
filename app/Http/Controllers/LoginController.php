@@ -1,4 +1,4 @@
-<?php/*
+<?php
 
 namespace estoque\Http\Controllers;
 
@@ -12,13 +12,14 @@ class LoginController extends Controller
     //
 
     public function login(){
+        /*
         $credenciais = Request::only('email','password');
         if(Auth::attempt($credenciais)){
             return "Usuário ".Auth::user()->name." logado com sucesso";
         }
 
-        return "As credenciais nao são validas";
-
-    }
+    return "As credenciais nao são validas";*/  
+  }
+  
 }
-*/
+

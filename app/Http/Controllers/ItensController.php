@@ -2,12 +2,17 @@
 
 namespace estoque\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Request;
 use estoque\Http\Requests;
 use estoque\Http\Controllers\Controller;
 use estoque\Produto;
-use estoque\ItensPedido;
+use estoque\ItensPedidos;
+use estoque\Http\Requests\PedidoRequest;
+use estoque\Http\Requests\ItensRequest;
+use Validator;
+
+
 class ItensController extends Controller
 {
     /**
@@ -26,11 +31,13 @@ class ItensController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function adiciona()
+    public function adiciona(ItensRequest $request)
     {
-        ItensPedido::create($request->all());
+       
+        ItensPedidos::create($request->all());
         $produtos = Produto::all();
-        return view('itensPedidos\itensPedidos')->with('produtos',$produtos);
+        
+        return redirect('itens\novo')->with('status', 'Produto  Adicionado com Sucesso!!');
     }
     
         //
@@ -42,9 +49,9 @@ class ItensController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function lista()
     {
-        //
+       
     }
 
     /**

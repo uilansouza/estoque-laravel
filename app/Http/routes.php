@@ -46,13 +46,16 @@ Route::get('/clientes/remove/{id}','ClienteController@remove');
  */
 Route::get('/pedidos/novo','PedidoController@novo');
 Route::post('/pedidos/adiciona','PedidoController@adiciona');
+Route::get('/pedidos/lista','PedidoController@lista');
 
 /**
  * Rotas para Itens
  */
 
-Route::get('/Itens/novo','ItensController@novo');
-Route::post('/Itens/adiciona','ItensController@adiciona');
+Route::get('/itens/novo','ItensController@novo');
+Route::post('/itens/adiciona','ItensController@adiciona');
+
+        
 
 # Authentication
 

@@ -11,7 +11,11 @@
                 </ul>
             </div>
     @endif
-    
+    @if (session('status'))
+    <div  class="text-center alert alert-success">
+           <strong>{{ session('status') }} </strong>
+     </div>
+     @endif
         <div class="row  col-md-12">
        
                              
