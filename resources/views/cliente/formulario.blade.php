@@ -40,7 +40,7 @@
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" value="{{ old('telefone') }}" id="telefone"  class="form-control">
                 </div>
-
+                <input type ="hidden" name="user_id" value="{{Auth::user()->id}}">
                 <button type="submit" class="btn btn-info btn-block">Cadastrar</button>
                 </form>
             </div>

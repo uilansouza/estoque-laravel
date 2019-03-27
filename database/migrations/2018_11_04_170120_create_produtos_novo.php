@@ -13,11 +13,13 @@ class CreateProdutosNovo extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('nome');
             $table->decimal('valor', 8, 2);
             $table->string('descricao');
             $table->integer('quantidade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

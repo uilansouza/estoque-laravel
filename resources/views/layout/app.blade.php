@@ -44,6 +44,7 @@
 							<li><a href="{{action('ProdutoController@novo')}}" class="navbar-brand" >Cadastrar Produto</a></li>
 							<li><a href="{{action('ClienteController@novo')}}" class="navbar-brand" >Cadastrar Cliente</a></li>
 							<li><a href="{{action('ClienteController@lista')}}" class="navbar-brand" >Listar Cliente</a></li>
+							<li><a href="{{action('PedidoController@novo')}}" class="navbar-brand" >Cadastrar Pedido</a></li>
 						</ul>
 				@endif
 				<ul class="nav navbar-nav navbar-right">
