@@ -19,7 +19,7 @@ $pedido = session()->get('pedido','nao passou');
   
         <div class="nav  navbar-right">
         <span class=" btn-primary badge"><strong>Pedido Nº: <?php echo  $pedido->id = isset($pedido->id) ?  $pedido->id:''; ?></strong></span>
-                </div>
+        </div>
         <div class="row  col-md-12">
        
                
@@ -57,7 +57,9 @@ $pedido = session()->get('pedido','nao passou');
                 
                     <input type ="hidden" name="user_id" value="{{Auth::id()}}">
                     <button type="submit" class="btn btn-info btn-block">Adicionar Item</button>
+                    
                 </form>
+                <a href = "{{action('PedidoController@lista', $p->id)}}"><button type="submit" class="btn btn-warning btn-block"><strong>Finalizar Pedido</strong></button></a>
             </div>
     </div>
 </div>

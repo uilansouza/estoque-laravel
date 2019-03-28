@@ -14,6 +14,7 @@
            <strong>{{ session('status') }} </strong>
      </div>
      @endif
+     
 
     <table class="table table-striped table-bordered table-hover">
         <tr>
@@ -25,7 +26,8 @@
             <th>Detalhes</th>
             <th>Excluir</th>
         </tr>
-         @foreach ($pedidos as $p)
+        @foreach ($pedidos as $p)
+         <tr>
                 <td>{{$p->id}}</td>
                 <td>{{$p->nome}}</td>
                 <td class="text-center">{{$p->soma}}</td>  
@@ -33,20 +35,22 @@
                 <?php $data = strtotime($p->data_pedido); ?>
                 <td class="text-center">{{date('d/m/Y H:m:s',$data)}}</td>
                 <td class="text-center">
-                        <a href="/produtos/mostra/<?=$p->id?>"><span class="glyphicon glyphicon-search"></span></a>
+                        <a href="{{action('ItensController@lista', $p->id)}} "><span class="glyphicon glyphicon-search"></span></a>
                 </td>
                 <td class="text-center">
                  <a href="{{action('ItensController@remove', $p->id)}}">
                      <span class="glyphicon glyphicon-trash"></span>
                 </a>
                 </td>
+          </tr>
                
-            </tr>
+            
            
             
         @endforeach
     @endif
     </table>
+   rddr
    
 
 @stop

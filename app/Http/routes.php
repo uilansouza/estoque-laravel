@@ -17,9 +17,7 @@ Route::get('/', function () {
 });*/
 
 Route::get('/produtos','ProdutoController@lista');
-
 Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
-
 Route::get('/produtos/novo', 'ProdutoController@novo');
 Route::post('/produtos/adiciona','ProdutoController@adiciona');
 
@@ -46,14 +44,14 @@ Route::get('/clientes/remove/{id}','ClienteController@remove');
  */
 Route::get('/pedidos/novo','PedidoController@novo');
 Route::post('/pedidos/adiciona','PedidoController@adiciona');
-Route::get('/pedidos/lista','PedidoController@lista');
+Route::get('/pedidos','PedidoController@lista');
 
 /**
  * Rotas para Itens
  */
 
 Route::get('/itens/novo','ItensController@novo');
-Route::get('/itens/lista','ItensController@lista');
+Route::get('/itens/lista/{id}','ItensController@lista');
 Route::post('/itens/adiciona','ItensController@adiciona');
 Route::get('/itens/remove','ItensController@remove');
 

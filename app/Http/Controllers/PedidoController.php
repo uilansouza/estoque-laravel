@@ -56,9 +56,9 @@ class PedidoController extends Controller
         ->groupBy('pedidos.id')
         ->get();
 
-        dd($pedidos);
+        
       
-        return view('pedido\listagem')->with('pedidos',$pedidos);
+        return view('pedido\listaPedidos')->with('pedidos',$pedidos);
 /*
 
        $valor = " select ped.id as 'Nº Pedido', cli.nome , sum(i.quantidade) as 'Total Itens', sum(i.quantidade*i.valor_venda) as 'Total Pedido' , ped.data_pedido from clientes cli

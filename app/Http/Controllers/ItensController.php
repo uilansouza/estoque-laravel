@@ -61,17 +61,18 @@ class ItensController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function lista()
+    public function lista($id)
     {
         
-        $pedidos = DB::table('itenspedidos')
+        $itens = DB::table('itenspedidos')
         ->join('produtos',  'produtos.id', '=', 'itenspedidos.produto_id')
         ->join('pedidos', 'pedidos.id', '=', 'itenspedidos.pedido_id')
         ->join('clientes', 'clientes.id', '=', 'pedidos.cliente_id')
-        ->select('pedidos.id','produtos.nome','produtos.descricao','itenspedidos.quantidade','itenspedidos.valor_venda',  DB::raw('itenspedidos.quantidade * itenspedidos.valor_venda as Total'))
-        ->where('pedidos.id',28)
+        ->select('pedidos.id','produtos.nome','produtos.descricao','itenspedidos.quantidade','itenspedidos.valor_venda',  DB::raw('itenspedidos.quantidade * itenspedidos.valor_venda as total'))
+        ->where('pedidos.id',$id)
         ->get();
-        dd($pedidos);
+        
+        return view('itensPedidos\listagem')->with('itens',$itens);
 
 
 /*
