@@ -53,7 +53,10 @@ Route::get('/pedidos/lista','PedidoController@lista');
  */
 
 Route::get('/itens/novo','ItensController@novo');
+Route::get('/itens/lista','ItensController@lista');
 Route::post('/itens/adiciona','ItensController@adiciona');
+Route::get('/itens/remove','ItensController@remove');
+
 
         
 

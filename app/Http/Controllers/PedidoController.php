@@ -49,14 +49,16 @@ class PedidoController extends Controller
 
     public function lista()
     {
-        $lista = DB::table('clientes')
+        $pedidos = DB::table('clientes')
         ->join('pedidos',  'pedidos.cliente_id', '=', 'clientes.id')
         ->join('itenspedidos', 'itenspedidos.pedido_id', '=', 'pedidos.id')
-        ->select('pedidos.id','clientes.nome',   DB::raw('SUM(itenspedidos.quantidade) as Soma'),  DB::raw('SUM(itenspedidos.quantidade*itenspedidos.valor_venda) as Total')  ,'pedidos.data_pedido')
+        ->select('pedidos.id','clientes.nome',   DB::raw('SUM(itenspedidos.quantidade) as soma'),  DB::raw('SUM(itenspedidos.quantidade*itenspedidos.valor_venda) as total')  ,'pedidos.data_pedido')
         ->groupBy('pedidos.id')
         ->get();
+
+        dd($pedidos);
       
-        dd($lista);
+        return view('pedido\listagem')->with('pedidos',$pedidos);
 /*
 
        $valor = " select ped.id as 'Nº Pedido', cli.nome , sum(i.quantidade) as 'Total Itens', sum(i.quantidade*i.valor_venda) as 'Total Pedido' , ped.data_pedido from clientes cli
