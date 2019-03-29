@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
+    public function __construct()
+    {
+        //apenas quem esta logado pode executar esses métodos abaixo
+        //$this->middleware('nosso-middleware',['only'=>['adiciona','remove','edita']]);
+        
+        $this->middleware('auth',['only' => ['adiciona','novo']]);
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,12 +64,11 @@ class PedidoController extends Controller
         ->groupBy('pedidos.id')
         ->get();
 
-        
-      
         return view('pedido\listaPedidos')->with('pedidos',$pedidos);
-/*
 
-       $valor = " select ped.id as 'Nº Pedido', cli.nome , sum(i.quantidade) as 'Total Itens', sum(i.quantidade*i.valor_venda) as 'Total Pedido' , ped.data_pedido from clientes cli
+        /*********************QUERY DE COSULTA *******************************
+
+        select ped.id as 'Nº Pedido', cli.nome , sum(i.quantidade) as 'Total Itens', sum(i.quantidade*i.valor_venda) as 'Total Pedido' , ped.data_pedido from clientes cli
                     inner join pedidos ped ON (cli.id = ped.cliente_id)
                     inner join itenspedidos i on (i.pedido_id = ped.id)
                     group by (ped.id);';

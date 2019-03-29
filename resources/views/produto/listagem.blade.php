@@ -38,15 +38,15 @@
                 <td>{{$p->valor}}</td>
                 <td >{{$p->descricao}}</td>
                 <td class="text-center">{{$p->quantidade}}</td>
-                <td class="text-center">
+                <td title="Visualiza os detalhes do Produto" class="text-center">
                         <a href="/produtos/mostra/<?=$p->id?>"><span class="glyphicon glyphicon-search"></span></a>
                 </td>
-                <td class="text-center" >
+                <td title="Editar Produto" class="text-center" >
                  <a href="{{action('ProdutoController@edita', $p->id)}}">
                      <span class="glyphicon glyphicon-pencil"></span>
                 </a>
                 </td>
-                <td class="text-center">
+                <td title="Excluir" Produto class="text-center">
                  <a href="{{action('ProdutoController@remove', $p->id)}}">
                      <span class="glyphicon glyphicon-trash"></span>
                 </a>

@@ -45,7 +45,7 @@
     @endif
     </table>
     <div class=" row">
-         <div class="col-md-3 col-md-offset-5"><a  href="{{action('PedidoController@lista')}} "><button type="submit" class="btn btn-info btn-block">Voltar</button></a>
+         <div class="col-md-3 col-md-offset-5"><form action ='/pedidos'><button type="submit" class="btn btn-info btn-block">Voltar</button></form>
         </div>
    </div>
     

@@ -16,6 +16,14 @@ use Validator;
 
 class ItensController extends Controller
 {
+    public function __construct()
+    {
+        //apenas quem esta logado pode executar esses métodos abaixo
+        //$this->middleware('nosso-middleware',['only'=>['adiciona','remove','edita']]);
+        
+        $this->middleware('auth',['only' => ['novo','adiciona','lista']]);
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,19 +49,7 @@ class ItensController extends Controller
         return redirect('itens\novo')->with('status', 'Produto  Adicionado com Sucesso!!');
     }
     
-        //
-    
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function remove()
-    {
-       
-    }
+        
 
     /**
      * Display the specified resource.
@@ -75,46 +71,15 @@ class ItensController extends Controller
         return view('itensPedidos\listagem')->with('itens',$itens);
 
 
-/*
+        /********     QUERY DE CONSULTA  **************************************
         select p.id as 'pedido', prod.nome,prod.descricao, i.quantidade, i.valor_venda as 'valor', (i.quantidade * i.valor_venda) as 'total'  from itenspedidos i 
             join produtos prod ON (prod.id = i.produto_id)
             JOIN pedidos p ON (p.id = i.pedido_id)
             join clientes c ON (c.id = p.cliente_id)
-            where p.id = 28;
+            where p.id = id;
         */
   }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  
 }

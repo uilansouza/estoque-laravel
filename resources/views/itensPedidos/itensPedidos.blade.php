@@ -1,5 +1,5 @@
 <?php 
-$pedido = session()->get('pedido','nao passou');
+$pedido = session()->get('pedido','0');
 
 ?>
 @extends('layout.app')
@@ -59,7 +59,7 @@ $pedido = session()->get('pedido','nao passou');
                     <button type="submit" class="btn btn-info btn-block">Adicionar Item</button>
                     
                 </form>
-                <a href = "{{action('PedidoController@lista', $p->id)}}"><button type="submit" class="btn btn-warning btn-block"><strong>Finalizar Pedido</strong></button></a>
+                <form action ="/"><button type="submit" class="btn btn-warning btn-block"><strong>Finalizar Pedido</strong></button></form>
             </div>
     </div>
 </div>

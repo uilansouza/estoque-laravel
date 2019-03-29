@@ -34,10 +34,10 @@
                 <td >R$: {{number_format($p->total, 2, ',', '.')}}</td>
                 <?php $data = strtotime($p->data_pedido); ?>
                 <td class="text-center">{{date('d/m/Y H:m:s',$data)}}</td>
-                <td class="text-center">
+                <td class="text-center" title="Visualiza os detalhes do pedido">
                         <a href="{{action('ItensController@lista', $p->id)}} "><span class="glyphicon glyphicon-search"></span></a>
                 </td>
-                <td class="text-center">
+                <td class="text-center" title="Funcionalidade em Desenvolvimento">
                  <a href="{{action('ItensController@remove', $p->id)}}">
                      <span class="glyphicon glyphicon-trash"></span>
                 </a>

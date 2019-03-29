@@ -13,6 +13,14 @@ use Validator;
 
 class ClienteController extends Controller
 {
+    public function __construct()
+    {
+        //apenas quem esta logado pode executar esses métodos abaixo
+        //$this->middleware('nosso-middleware',['only'=>['adiciona','remove','edita']]);
+        
+        $this->middleware('auth',['only' => ['novo','adiciona','lista','edita','remove']]);
+
+    }
     /**
      * Display a listing of the resource.
      *
