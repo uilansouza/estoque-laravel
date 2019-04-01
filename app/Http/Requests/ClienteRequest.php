@@ -25,7 +25,7 @@ class ClienteRequest extends Request
             'nome'=>'required|max:100',
            //'email'=>'required|unique:clientes|min:10',
             'endereco'=>'required|min:10|max:100',
-            'telefone'=>'required|numeric|'
+            'telefone'=>'required|numeric|min:10'
 
             //
         ];

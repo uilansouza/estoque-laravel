@@ -29,19 +29,23 @@
             <th>Total</th>
             
         </tr>
+        <?php $total = 0; ?>
          @foreach ($itens as $i)
-        <tr>
-                <td>{{$i->nome}}</td>
-                <td >{{$i->descricao}}</td>  
-                <td class="text-center">{{$i->quantidade}}</td>
-                <td >R$: {{number_format($i->valor_venda, 2, ',', '.')}}</td>
-                <td >R$: {{number_format($i->total, 2, ',', '.')}}</td>
-                             
-        </tr>
-            
-    
-            
+          <tr>
+                  <td>{{$i->nome}}</td>
+                  <td >{{$i->descricao}}</td>  
+                  <td class="text-center">{{$i->quantidade}}</td>
+                  <td >R$: {{number_format($i->valor_venda, 2, ',', '.')}}</td>
+                  <td >R$: {{number_format($i->total, 2, ',', '.')}}</td>
+                  <?php $total +=$i->total; ?>
+          </tr>       
         @endforeach
+        <tr>
+        <td colspan="4"><font color ="blue"><strong>Total do Pedido</strong></font></td>
+        
+        <td ><font color ="green"><strong>R$: {{number_format($total, 2,',','.')}}</strong></font></td>
+        </tr>
+
     @endif
     </table>
     <div class=" row">

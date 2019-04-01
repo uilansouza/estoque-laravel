@@ -35,7 +35,7 @@
          @foreach ($produtos as $p)
             <tr class="{{$p->quantidade<=1 ? 'danger' : '' }}">
                 <td>{{$p->nome}}</td>
-                <td>{{$p->valor}}</td>
+                <td>R$: {{ number_format($p->valor, 2, ',', '.')}}</td>
                 <td >{{$p->descricao}}</td>
                 <td class="text-center">{{$p->quantidade}}</td>
                 <td title="Visualiza os detalhes do Produto" class="text-center">
